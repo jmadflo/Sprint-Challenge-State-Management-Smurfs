@@ -1,5 +1,8 @@
 export const initialState = {
     data: [],
+    name: '',
+    age: '',
+    height: '',
 }
 
 export const mainReducer = (state = initialState, action) => {
