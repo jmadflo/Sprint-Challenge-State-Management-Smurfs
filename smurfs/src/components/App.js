@@ -2,6 +2,7 @@ import React from "react"
 import { useDispatch, useSelector } from 'react-redux'
 import { updateFormAction, getDataAction } from '../actions/mainActions'
 import Form from './Form'
+import SmurfList from './SmurfList'
 import "./App.css"
 const App = () => {
 
@@ -26,6 +27,7 @@ const App = () => {
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
       <Form updateForm={updateForm} getData={getData} name={name} age={age} height={height}/>
+      <SmurfList data={data}/>
     </div>
   )
 }

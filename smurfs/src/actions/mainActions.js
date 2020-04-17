@@ -10,8 +10,8 @@ export const updateFormAction = (update) => {
 export const getDataAction = () => dispatch => {
     axios.get('http://localhost:3333/smurfs')
         .then(response => {
-            console.log(response)
-            // dispatch({type: GET_DATA, payload: response.data})
+            console.log(response.data)
+            dispatch({type: GET_DATA, payload: response.data})
         })
         .catch(error => alert(error))
 }
