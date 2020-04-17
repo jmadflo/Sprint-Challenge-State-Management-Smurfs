@@ -38,6 +38,7 @@ const App = () => {
     dispatch(putDataAction(name, age, height, id))
   }
 
+  // delete existing smurf
   const deleteData = (postToDeleteId) => {
     dispatch(deleteDataAction(postToDeleteId))
   }
@@ -50,6 +51,7 @@ const App = () => {
   return (
     <div className='App'>
       <h1>SMURFS! 2.0 W/ Redux</h1>
+      <img src='https://i.pinimg.com/474x/f6/e1/ff/f6e1ff3d69a481361e2eb9063291ef7d--starwars-jedi.jpg' alt='smurf Yoda'/>
       <Form updateForm={updateForm} getData={getData} postData={postData} putData={putData} name={name} age={age} height={height} isEditing={isEditing}/>
       <SmurfList data={data} enableEditing={enableEditing} deleteData={deleteData}/>
     </div>

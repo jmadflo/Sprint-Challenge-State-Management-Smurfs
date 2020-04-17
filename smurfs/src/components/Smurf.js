@@ -1,5 +1,4 @@
 import React from 'react'
-import { deleteDataAction } from '../actions/mainActions'
 
 const Smurf = ({smurf, enableEditing, deleteData}) => {
     return (

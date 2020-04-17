@@ -31,3 +31,9 @@ label, button {
 .deleteButton {
   color: red;
 }
+
+img {
+  border: 2px solid #029ECC;
+  border-radius: 100%;
+  margin-bottom: 20px;
+}
