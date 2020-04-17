@@ -12,8 +12,12 @@ const Form = props => {
             <label htmlFor='height'> Height: 
                 <input name='height' id='height' value={props.height} onChange={props.updateForm}/>
             </label>
-            <button className='submitButtonGet' onClick={props.getData}>Submit Get</button>
-            <button className='submitButtonPost' onClick={props.postData}>Submit Post</button>
+            {props.isEditing ? <button className='submitPutButton' >Submit Put</button> : 
+                <div style={{display: 'inline'}}>
+                    <button className='submitButtonGet' onClick={props.getData}>Submit Get</button>
+                    <button className='submitButtonPost' onClick={props.postData}>Submit Post</button>
+                </div>
+            }
         </form>
     )
 }
