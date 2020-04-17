@@ -1,6 +1,6 @@
 import React from "react"
 import { useDispatch, useSelector } from 'react-redux'
-import { updateFormAction } from '../actions/mainActions'
+import { updateFormAction, getDataAction } from '../actions/mainActions'
 import Form from './Form'
 import "./App.css"
 const App = () => {
@@ -16,11 +16,16 @@ const App = () => {
   const updateForm = event => {
     dispatch(updateFormAction({id: event.target.name, value: event.target.value}))
   }
+
+  const getData = event => {
+    event.preventDefault()
+    dispatch(getDataAction())
+  }
   
   return (
     <div className="App">
       <h1>SMURFS! 2.0 W/ Redux</h1>
-      <Form updateForm={updateForm} name={name} age={age} height={height}/>
+      <Form updateForm={updateForm} getData={getData} name={name} age={age} height={height}/>
     </div>
   )
 }
