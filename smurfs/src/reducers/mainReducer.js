@@ -1,4 +1,4 @@
-import { UPDATE_FORM, GET_DATA, POST_DATA, PUT_DATA, ENABLE_EDITING } from '../actions/mainActions'
+import { UPDATE_FORM, GET_DATA, POST_DATA, PUT_DATA, ENABLE_EDITING, DELETE_DATA } from '../actions/mainActions'
 
 export const initialState = {
     data: [],
@@ -43,6 +43,11 @@ export const mainReducer = (state = initialState, action) => {
                 height: '',
                 isEditing: false,
                 id: ''
+            }
+        case DELETE_DATA:
+            return {
+                ...state,
+                data: action.payload,
             }
         case ENABLE_EDITING:
             return {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { updateFormAction, getDataAction, postDataAction, putDataAction, enableEditingAction } from '../actions/mainActions'
+import { updateFormAction, getDataAction, postDataAction, putDataAction, deleteDataAction, enableEditingAction } from '../actions/mainActions'
 import Form from './Form'
 import SmurfList from './SmurfList'
 import './App.css'
@@ -32,9 +32,14 @@ const App = () => {
     dispatch(postDataAction(name, age, height))
   }
 
+  // change existing smurf in data
   const putData = event => {
     event.preventDefault()
     dispatch(putDataAction(name, age, height, id))
+  }
+
+  const deleteData = (postToDeleteId) => {
+    dispatch(deleteDataAction(postToDeleteId))
   }
 
   // populate form with data to be edited and render put button
@@ -46,7 +51,7 @@ const App = () => {
     <div className='App'>
       <h1>SMURFS! 2.0 W/ Redux</h1>
       <Form updateForm={updateForm} getData={getData} postData={postData} putData={putData} name={name} age={age} height={height} isEditing={isEditing}/>
-      <SmurfList data={data} enableEditing={enableEditing}/>
+      <SmurfList data={data} enableEditing={enableEditing} deleteData={deleteData}/>
     </div>
   )
 }

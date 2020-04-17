@@ -4,6 +4,7 @@ export const UPDATE_FORM = 'update_form'
 export const GET_DATA = 'get_data'
 export const POST_DATA = 'post_data'
 export const PUT_DATA = 'put_data'
+export const DELETE_DATA = 'delete_data'
 export const ENABLE_EDITING = 'enable_editing'
 
 export const updateFormAction = (update) => {
@@ -33,6 +34,15 @@ export const putDataAction = (name, age, height, id) => dispatch => {
         .then(response => {
             console.log(response.data)
             dispatch({ type: PUT_DATA, payload: response.data })
+        })
+        .catch(error => alert(error))
+}
+
+export const deleteDataAction = postToDeleteId => dispatch => {
+    axios.delete(`http://localhost:3333/smurfs/${postToDeleteId}`)
+        .then(response => {
+            console.log(response.data)
+            dispatch({ type: DELETE_DATA, payload: response.data })
         })
         .catch(error => alert(error))
 }
