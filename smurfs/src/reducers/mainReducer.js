@@ -1,4 +1,4 @@
-import { UPDATE_FORM, GET_DATA } from '../actions/mainActions'
+import { UPDATE_FORM, GET_DATA, POST_DATA } from '../actions/mainActions'
 
 export const initialState = {
     data: [],
@@ -17,6 +17,11 @@ export const mainReducer = (state = initialState, action) => {
                 height: action.payload.id === 'height' ? action.payload.value : state.height
             }
         case GET_DATA:
+            return {
+                ...state,
+                data: action.payload
+            }
+        case POST_DATA:
             return {
                 ...state,
                 data: action.payload

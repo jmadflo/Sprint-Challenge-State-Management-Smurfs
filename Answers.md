@@ -8,7 +8,7 @@ In redux, actions provide the reducers with instructions for the type of change 
 
 1. What is the difference between Application state and Component state? When would be a good time to use one over the other?
 
-Application level state can be accessed by any component in the application, while component level state can only be accessed by the component to which it belongs and be passed down to that component's children. A good time to use component level state would be to contain and the the values of a form. A good situation to use application level state would be to contain data, perhaps received from an api that will be used throughout the application.
+Application level state can be accessed by any component in the application, while component level state can only be accessed by the component to which it belongs and be passed down to that component's children. A good time to use component level state would be to contain and update the values of a form. A good situation to use application level state would be to contain data, perhaps received from an api that will be used throughout the application.
 
 1. Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 

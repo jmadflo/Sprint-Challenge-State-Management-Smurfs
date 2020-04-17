@@ -13,7 +13,7 @@ const Form = props => {
                 <input name='height' id='height' value={props.height} onChange={props.updateForm}/>
             </label>
             <button className='submitButtonGet' onClick={props.getData}>Submit Get</button>
-            <button className='submitButtonPost' >Submit Post</button>
+            <button className='submitButtonPost' onClick={props.postData}>Submit Post</button>
         </form>
     )
 }

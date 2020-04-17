@@ -1,9 +1,9 @@
-import React from "react"
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { updateFormAction, getDataAction } from '../actions/mainActions'
+import { updateFormAction, getDataAction, postDataAction } from '../actions/mainActions'
 import Form from './Form'
 import SmurfList from './SmurfList'
-import "./App.css"
+import './App.css'
 const App = () => {
 
   // Redux hooks
@@ -22,11 +22,16 @@ const App = () => {
     event.preventDefault()
     dispatch(getDataAction())
   }
+
+  const postData = event => {
+    event.preventDefault()
+    dispatch(postDataAction(name, age, height))
+  }
   
   return (
-    <div className="App">
+    <div className='App'>
       <h1>SMURFS! 2.0 W/ Redux</h1>
-      <Form updateForm={updateForm} getData={getData} name={name} age={age} height={height}/>
+      <Form updateForm={updateForm} getData={getData} postData={postData} name={name} age={age} height={height}/>
       <SmurfList data={data}/>
     </div>
   )
