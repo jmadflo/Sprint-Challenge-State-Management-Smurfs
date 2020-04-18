@@ -39,12 +39,12 @@ const App = () => {
   }
 
   // delete existing smurf
-  const deleteData = (postToDeleteId) => {
+  const deleteData = postToDeleteId => {
     dispatch(deleteDataAction(postToDeleteId))
   }
 
   // populate form with data to be edited and render put button
-  const enableEditing = (postToEdit) => {
+  const enableEditing = postToEdit => {
     dispatch(enableEditingAction(postToEdit))
   }
   
